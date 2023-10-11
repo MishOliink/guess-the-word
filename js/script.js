@@ -15,7 +15,7 @@ const pickWord = () => {
   return words[Math.floor(Math.random() * words.length)];
 };
 
-let setupAnswerArray = (word) => {
+const setupAnswerArray = (word) => {
   let answerArray = [];
   for (let i = 0; i < word.length; i++) {
     answerArray[i] = "_";
@@ -24,13 +24,13 @@ let setupAnswerArray = (word) => {
   return answerArray;
 };
 
-let showPlayerProgress = (answerArray) => {
+const showPlayerProgress = (answerArray) => {
   alert(answerArray.join(" "));
 };
 
-let getGuess = () => prompt("Guess a letter, or click Cancel to stop playing.");
+const getGuess = () => prompt("Guess a letter, or click Cancel to stop playing.");
 
-let updateGameState = (guess, word, answerArray) => {
+const updateGameState = (guess, word, answerArray) => {
   let appearances = 0;
   for (let j = 0; j < word.length; j++) {
     if (word[j] === guess) {
@@ -42,13 +42,13 @@ let updateGameState = (guess, word, answerArray) => {
   return appearances;
 };
 
-let showAnswerAndCongratulatePlayer = (answerArray) => {
+const showAnswerAndCongratulatePlayer = (answerArray) => {
   showPlayerProgress(answerArray);
   alert("Good job! The answer was " + answerArray.join(""));
 };
 
-let word = pickWord();
-let answerArray = setupAnswerArray(word);
+const word = pickWord();
+const answerArray = setupAnswerArray(word);
 let remainingLetters = word.length;
 
 while (remainingLetters > 0) {
