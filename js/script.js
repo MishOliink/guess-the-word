@@ -9,7 +9,14 @@ const pickWord = () => {
     'python',
     'sql',
     'php',
-    'golang'
+    'golang',
+    'kotlin',
+    'scala',
+    'ruby',
+    'typescript',
+    'sql',
+    'haskell',
+    'rust'
   ];
 
   return words[Math.floor(Math.random() * words.length)];
@@ -28,7 +35,7 @@ const showPlayerProgress = (answerArray) => {
   alert(answerArray.join(" "));
 };
 
-const getGuess = () => prompt("Guess a letter, or click Cancel to stop playing.");
+const getGuess = () => prompt("Guess a letter of programming language, or click Cancel to stop playing.");
 
 const updateGameState = (guess, word, answerArray) => {
   let appearances = 0;
@@ -66,4 +73,3 @@ while (remainingLetters > 0) {
 }
 
 showAnswerAndCongratulatePlayer(answerArray);
-
